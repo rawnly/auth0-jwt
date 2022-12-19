@@ -1,9 +1,9 @@
-# Auth0 RS
+# Auth0 JWT
 > Auth0 utility to check if the given JWT is valid.
 
 ## Usage
 ```rust
-use auth0_rs::get_claims;
+use auth0_jwt::get_claims;
 
 #[tokio::async]
 async fn main() {
@@ -20,7 +20,7 @@ async fn main() {
 
 ## Axum Example 
 ```rust
-use auth0_rs::claims::Claims;
+use auth0_jwt::claims::Claims;
 use axum::{response::IntoResponse, routing::get, Json, Router};
 use dotenv::dotenv;
 use serde::{Deserialize, Serialize};

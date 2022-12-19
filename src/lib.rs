@@ -6,8 +6,12 @@
 //! ## Usage Example (via Axum)
 //! > with `axum` and `claims` features enabled
 //!
-//! ```rust
-//! use auth0_rs::claims::Claims;
+//!
+//! ```no_run
+//! #[cfg(all(feature = "claims", feature = "claims"))]
+//! use auth0_jwt::claims::Claims;
+//! #[cfg(all(feature = "claims", feature = "claims"))]
+//! use axum::response::IntoResponse;
 //!
 //! struct ClaimsContent {
 //!     exp: usize,
@@ -15,6 +19,7 @@
 //! }
 //!
 //! // Using the `Claims` struct lets you decode automatically the value into a struct.
+//! #[cfg(all(feature = "claims", feature = "claims"))]
 //! async fn handler(Claims(claims): Claims<ClaimsContent>) -> impl IntoResponse {
 //!     // your claims
 //!     println!("Exp: {}, Iat: {}", claims.exp, claims.iat);

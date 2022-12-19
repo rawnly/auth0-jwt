@@ -27,7 +27,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "auth0-rs"
+name = "auth0-jwt"
 version = "0.1.0"
 dependencies = [
  "alcoholic_jwt",
@@ -101,7 +101,7 @@ dependencies = [
 name = "axum-hello-world"
 version = "0.1.0"
 dependencies = [
- "auth0-rs",
+ "auth0-jwt",
  "axum",
  "tokio",
 ]
