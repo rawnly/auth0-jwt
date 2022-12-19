@@ -4,7 +4,7 @@ use alcoholic_jwt::JWKS;
 pub fn jwks_uri(issuer: &str) -> String {
     let suffix = ".well-known/jwks.json";
 
-    if issuer.ends_with("/") {
+    if issuer.ends_with('/') {
         return format!("{}{}", issuer, suffix);
     }
 
