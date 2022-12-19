@@ -5,6 +5,8 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Federico Vitale <mail@fedevitale.dev>"]
 keywords = ["jwt", "token", "jwks", "auth0"]
+homepage = "https://github.com/rawnly/auth0-rs"
+repository = "https://github.com/rawnly/auth0-rs"
 license = "MIT"
 
 [dependencies]
