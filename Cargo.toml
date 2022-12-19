@@ -1,0 +1,30 @@
+[package]
+name = "auth0-rs"
+description = "Library to validate JWTs from Auth0"
+version = "0.1.0"
+edition = "2021"
+authors = ["Federico Vitale <mail@fedevitale.dev>"]
+keywords = ["jwt", "token", "jwks", "auth0"]
+
+[dependencies]
+alcoholic_jwt = "4091.0.0"
+reqwest = { version = "0.11.13", features = ["rustls-tls", "json"] }
+serde = { version = "1.0.151", features = ["derive"] }
+serde_json = { version = "1.0.91", features = ["raw_value"] }
+thiserror = "1.0.38"
+
+# Optional dependencies
+async-trait = { version = "0.1.60", optional = true }
+headers = { version = "0.3.8", optional = true }
+axum = { version = "0.6.1", optional = true, features = ["headers"] }
+
+
+[features]
+axum = ["dep:axum", "dep:headers", "dep:async-trait"]
+claims = []
+
+[workspace]
+members = [
+  "examples/axum-hello-world"
+]
+
