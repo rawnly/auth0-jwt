@@ -19,6 +19,7 @@ async fn main() {
 - `axum` - Implements the `FromRequestParts<T>` trait for `Claims` and provides a `Token(String)` extractor for convenience.
 
 ## Axum Example 
+Detailed example [here](./examples/axum-hello-world)
 ```rust
 use auth0_jwt::claims::Claims;
 use axum::{response::IntoResponse, routing::get, Json, Router};
