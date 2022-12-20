@@ -20,6 +20,7 @@ async fn main() {
 
 ## Axum Example 
 Detailed example [here](./examples/axum-hello-world)
+
 ```rust
 use auth0_jwt::claims::Claims;
 use axum::{response::IntoResponse, routing::get, Json, Router};
