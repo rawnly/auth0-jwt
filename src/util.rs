@@ -31,7 +31,7 @@ mod tests {
     }
 
     #[test]
-    fn test_jwks_uri_with_double_slash() {
+    fn test_jwks_uri_with_trailing_slash() {
         let result = jwks_uri("https://acme-website.org/");
         assert_eq!(result, "https://acme-website.org/.well-known/jwks.json");
     }

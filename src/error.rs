@@ -1,5 +1,8 @@
 #[cfg(feature = "axum")]
-use axum::{extract::rejection::TypedHeaderRejection, response::IntoResponse, Json};
+use axum::{response::IntoResponse, Json};
+
+#[cfg(feature = "axum")]
+use axum_extra::typed_header::TypedHeaderRejection;
 
 use reqwest::StatusCode;
 use serde::Serialize;
@@ -54,7 +57,12 @@ impl Error {
 #[cfg(feature = "axum")]
 impl IntoResponse for Error {
     fn into_response(self) -> axum::response::Response {
-        (self.status_code(), Json(ErrorBody::from_error(self))).into_response()
+        let axum_http_status_code = match self.status_code() {
+            StatusCode::FORBIDDEN => axum::http::StatusCode::FORBIDDEN,
+            _ => axum::http::StatusCode::UNAUTHORIZED,
+        };
+
+        (axum_http_status_code, Json(ErrorBody::from_error(self))).into_response()
     }
 }
 
